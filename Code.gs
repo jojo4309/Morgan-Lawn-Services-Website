@@ -2,7 +2,7 @@
 // Deploy as a Web App: Execute as Me, Who has access: Anyone
 // After each code change you must create a NEW deployment (not update the existing one)
 
-var RECIPIENT_EMAIL = "jonas4309@gmail.com";
+var RECIPIENT_EMAIL = "morganlawnservicesllc@gmail.com";
 
 function doPost(e) {
   var output = ContentService.createTextOutput();
