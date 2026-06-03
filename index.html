@@ -1632,14 +1632,11 @@
               <textarea id="cf-message" placeholder="Tell us anything else helpful — gates, special areas, current condition, preferred schedule, etc."></textarea>
             </div>
           </div>
-          <button class="btn btn-primary" id="form-submit-btn" style="width:100%; justify-content:center; margin-top:20px; padding:16px;" onclick="submitForm()">
+          <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px; padding:16px;" onclick="submitForm()">
             🌿 Send My Quote Request
           </button>
           <div class="form-success" id="form-success">
             ✅ Thanks! We received your request and will be in touch very soon — usually within a few hours!
-          </div>
-          <div id="form-error" style="display:none; background:#FFF3F3; border:1px solid #F44336; border-radius:10px; padding:16px 20px; color:#C62828; font-weight:500; text-align:center; margin-top:16px;">
-            ⚠️ Something went wrong sending your request. Please call or text us directly at <strong>(765) 123-4567</strong>.
           </div>
           <p style="font-size:0.78rem; color:var(--gray-mid); text-align:center; margin-top:16px;">We respect your privacy. Your information is never shared or sold.</p>
         </div>
@@ -1724,50 +1721,16 @@
   }
 
   // ─── FORM SUBMIT ───
-  // Paste your Google Apps Script web app URL here after deploying Code.gs
-  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBocBFFfh1wER3joPyQ7-H2HNdNY3s1nzAD8paaIGKdtlOeImzu5QWxOsBct5IMA94/exec';
-
   function submitForm() {
-    var firstName = document.getElementById('cf-name').value.trim();
-    var lastName  = document.getElementById('cf-last').value.trim();
-    var phone     = document.getElementById('cf-phone').value.trim();
-    var email     = document.getElementById('cf-email').value.trim();
-    var address   = document.getElementById('cf-address').value.trim();
-    var service   = document.getElementById('cf-service').value;
-    var yardSize  = document.getElementById('cf-yard').value;
-    var message   = document.getElementById('cf-message').value.trim();
-
-    if (!firstName || !phone || !address) {
+    const name = document.getElementById('cf-name').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const address = document.getElementById('cf-address').value.trim();
+    if (!name || !phone || !address) {
       alert('Please fill in your name, phone number, and address to submit.');
       return;
     }
-
-    var btn = document.getElementById('form-submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    document.getElementById('form-success').style.display = 'none';
-    document.getElementById('form-error').style.display = 'none';
-
-    fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({ firstName, lastName, phone, email, address, service, yardSize, message })
-    })
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-      if (data.success) {
-        document.getElementById('form-success').style.display = 'block';
-        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        btn.textContent = '✅ Sent!';
-      } else {
-        throw new Error(data.error || 'Unknown error');
-      }
-    })
-    .catch(function() {
-      document.getElementById('form-error').style.display = 'block';
-      document.getElementById('form-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      btn.disabled = false;
-      btn.textContent = '🌿 Send My Quote Request';
-    });
+    document.getElementById('form-success').style.display = 'block';
+    setTimeout(() => document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
   }
 
   // ─── NAV SHADOW ON SCROLL ───
