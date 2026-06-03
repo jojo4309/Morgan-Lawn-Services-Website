@@ -690,7 +690,7 @@
       <li><a onclick="showPage('pricing')" data-page="pricing">Pricing</a></li>
       <li><a onclick="showPage('about')" data-page="about">About</a></li>
       <li><a onclick="showPage('gallery')" data-page="gallery">Gallery</a></li>
-      <li><a onclick="showPage('reviews')" data-page="reviews">Reviews</a></li>
+      <!-- <li><a onclick="showPage('reviews')" data-page="reviews">Reviews</a></li> -->
       <li><a onclick="showPage('faq')" data-page="faq">FAQ</a></li>
       <li><a onclick="showPage('contact')" data-page="contact" class="nav-cta">Get a Quote</a></li>
     </ul>
@@ -708,7 +708,7 @@
   <a onclick="showPage('pricing'); toggleMenu()">Pricing</a>
   <a onclick="showPage('about'); toggleMenu()">About</a>
   <a onclick="showPage('gallery'); toggleMenu()">Gallery</a>
-  <a onclick="showPage('reviews'); toggleMenu()">Reviews</a>
+  <!-- <a onclick="showPage('reviews'); toggleMenu()">Reviews</a> -->
   <a onclick="showPage('faq'); toggleMenu()">FAQ</a>
   <a onclick="showPage('contact'); toggleMenu()" class="nav-cta-mobile">Get a Free Quote</a>
 </div>
@@ -743,10 +743,6 @@
           <div>
             <div class="hero-stat-num">100%</div>
             <div class="hero-stat-label">Locally Owned</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">5★</div>
-            <div class="hero-stat-label">Customer Rated</div>
           </div>
           <div>
             <div class="hero-stat-num">Free</div>
@@ -853,7 +849,8 @@
     </div>
   </div>
 
-  <!-- REVIEWS PREVIEW -->
+  <!-- REVIEWS PREVIEW — hidden until real reviews are available -->
+  <!--
   <div class="section">
     <div class="section-header section-header-center">
       <span class="section-label">What Customers Say</span>
@@ -899,6 +896,7 @@
       <button class="btn btn-secondary" onclick="showPage('reviews')">Read More Reviews</button>
     </div>
   </div>
+  -->
 
   <!-- SERVICE AREA -->
   <div class="section-full">
@@ -1346,8 +1344,9 @@
 
 
 <!-- ═══════════════════════════════════════════════════ -->
-<!-- ═══ REVIEWS PAGE ═══ -->
+<!-- ═══ REVIEWS PAGE — hidden until real reviews available ═══ -->
 <!-- ═══════════════════════════════════════════════════ -->
+<!--
 <div id="page-reviews" class="page">
   <div class="page-header">
     <div class="page-header-inner">
@@ -1442,7 +1441,8 @@
       <button class="btn btn-primary" style="margin-top:24px;" onclick="showPage('contact')">Contact Us Today</button>
     </div>
   </div>
-</div><!-- /reviews -->
+</div>
+--><!-- /reviews hidden -->
 
 
 <!-- ═══════════════════════════════════════════════════ -->
@@ -1678,7 +1678,7 @@
         <ul>
           <li><a onclick="showPage('about')">About Us</a></li>
           <li><a onclick="showPage('gallery')">Gallery</a></li>
-          <li><a onclick="showPage('reviews')">Reviews</a></li>
+          <!-- <li><a onclick="showPage('reviews')">Reviews</a></li> -->
           <li><a onclick="showPage('faq')">FAQ</a></li>
           <li><a onclick="showPage('pricing')">Pricing</a></li>
         </ul>
@@ -1725,7 +1725,7 @@
 
   // ─── FORM SUBMIT ───
   // Paste your Google Apps Script web app URL here after deploying Code.gs
-  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxNwgxFjjwuTNh9qCP9K6Je40acHqZj4nphrsOTqFEfHlC4uQa3iIld6UnXHMRSYAF-lA/exec';
+  var APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
 
   function submitForm() {
     var firstName = document.getElementById('cf-name').value.trim();
