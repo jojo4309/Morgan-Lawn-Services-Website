@@ -1,6 +1,6 @@
 // Morgan Lawn Services — Quote Request Handler
-// Deploy this as a Google Apps Script Web App (Execute as: Me, Access: Anyone)
-// Paste your deployed web app URL into index.html where indicated
+// Deploy as a Web App: Execute as Me, Who has access: Anyone
+// After each code change you must create a NEW deployment (not update the existing one)
 
 var RECIPIENT_EMAIL = "jonas4309@gmail.com";
 
@@ -44,7 +44,13 @@ function doPost(e) {
   return output;
 }
 
-// Test this function manually in the Apps Script editor to verify email delivery
+// Handles CORS preflight OPTIONS requests
+function doGet(e) {
+  return ContentService.createTextOutput(JSON.stringify({ status: "ok" }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Run this manually in the editor to verify email delivery works
 function testEmail() {
   GmailApp.sendEmail(
     RECIPIENT_EMAIL,
