@@ -44,11 +44,13 @@ function doPost(e) {
   return output;
 }
 
+// Handles CORS preflight OPTIONS requests
 function doGet(e) {
   return ContentService.createTextOutput(JSON.stringify({ status: "ok" }))
     .setMimeType(ContentService.MimeType.JSON);
 }
 
+// Run this manually in the editor to verify email delivery works
 function testEmail() {
   GmailApp.sendEmail(
     RECIPIENT_EMAIL,
