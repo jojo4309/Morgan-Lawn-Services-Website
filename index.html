@@ -316,7 +316,7 @@
   }
   .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
   .review-card::before {
-    content: '"'; font-family: var(--font-display);
+    content: '\201C'; font-family: var(--font-display);
     font-size: 5rem; color: var(--green-pale);
     position: absolute; top: 10px; right: 24px; line-height: 1;
   }
@@ -428,7 +428,7 @@
     user-select: none;
   }
   .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--green-dark); flex-shrink: 0; transition: var(--transition); }
-  .faq-item.open .faq-q::after { content: '−'; }
+  .faq-item.open .faq-q::after { content: '\2212'; }
   .faq-a { display: none; padding: 0 24px 20px; font-size: 0.9rem; color: var(--gray-mid); line-height: 1.7; border-top: 1px solid var(--gray-border); padding-top: 16px; }
   .faq-item.open .faq-a { display: block; }
 
@@ -606,7 +606,7 @@
     display: flex; align-items: center; gap: 10px;
   }
   .benefit-list li::before {
-    content: '→'; color: var(--green-bright); font-weight: 700; flex-shrink: 0;
+    content: '\2192'; color: var(--green-bright); font-weight: 700; flex-shrink: 0;
   }
 
   /* ─── ANIMATIONS ─── */
@@ -656,20 +656,23 @@
     #cf-services { grid-template-columns: 1fr !important; }
   }
 
+  /* ─── LAWN SVG ILLUSTRATIONS ─── */
   .lawn-illustration { width: 100%; height: 100%; }
 </style>
 </head>
 <body>
 
+<!-- ═══ NAVIGATION ═══ -->
 <nav id="navbar">
   <div class="nav-inner">
     <a class="logo" onclick="showPage('home')">
       <img src="Morgan.svg" alt="Morgan Lawn Services Logo" class="logo-svg" width="64" height="64" style="border-radius:10px;">
       <div class="logo-text">
         <span class="logo-name">Morgan</span>
-        <span class="logo-tagline">Lawn Services &middot; Kokomo, IN</span>
+        <span class="logo-tagline">Lawn Services · Kokomo, IN</span>
       </div>
     </a>
+
     <ul class="nav-links">
       <li><a onclick="showPage('home')" data-page="home">Home</a></li>
       <li><a onclick="showPage('services')" data-page="services">Services</a></li>
@@ -677,15 +680,18 @@
       <li><a onclick="showPage('pricing')" data-page="pricing">Pricing</a></li>
       <li><a onclick="showPage('about')" data-page="about">About</a></li>
       <li><a onclick="showPage('gallery')" data-page="gallery">Gallery</a></li>
+      <!-- <li><a onclick="showPage('reviews')" data-page="reviews">Reviews</a></li> -->
       <li><a onclick="showPage('faq')" data-page="faq">FAQ</a></li>
       <li><a onclick="showPage('contact')" data-page="contact" class="nav-cta">Get a Quote</a></li>
     </ul>
+
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a onclick="showPage('home'); toggleMenu()">Home</a>
   <a onclick="showPage('services'); toggleMenu()">Services</a>
@@ -693,34 +699,50 @@
   <a onclick="showPage('pricing'); toggleMenu()">Pricing</a>
   <a onclick="showPage('about'); toggleMenu()">About</a>
   <a onclick="showPage('gallery'); toggleMenu()">Gallery</a>
+  <!-- <a onclick="showPage('reviews'); toggleMenu()">Reviews</a> -->
   <a onclick="showPage('faq'); toggleMenu()">FAQ</a>
   <a onclick="showPage('contact'); toggleMenu()" class="nav-cta-mobile">Get a Free Quote</a>
 </div>
 
-<!-- HOME PAGE -->
+<!-- ═══ HOME PAGE ═══ -->
 <div id="page-home" class="page active">
+
   <section class="hero">
     <div class="hero-bg-pattern"></div>
-    <div class="hero-blobs"><div class="hero-blob"></div><div class="hero-blob"></div><div class="hero-blob"></div></div>
+    <div class="hero-blobs">
+      <div class="hero-blob"></div>
+      <div class="hero-blob"></div>
+      <div class="hero-blob"></div>
+    </div>
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-badge fade-in">Serving Kokomo &amp; Surrounding Areas</div>
-        <h1 class="hero-title fade-in fade-in-delay-1">Reliable Lawn Care Services in <span>Kokomo, Indiana</span></h1>
-        <p class="hero-sub fade-in fade-in-delay-2">Dependable, affordable lawn care with clear communication and professional results. Your neighbor in the lawn care business &mdash; built on honesty and hard work.</p>
+        <h1 class="hero-title fade-in fade-in-delay-1">
+          Reliable Lawn Care Services in <span>Kokomo, Indiana</span>
+        </h1>
+        <p class="hero-sub fade-in fade-in-delay-2">
+          Dependable, affordable lawn care with clear communication and professional results. Your neighbor in the lawn care business — built on honesty and hard work.
+        </p>
         <div class="hero-actions fade-in fade-in-delay-3">
-          <button class="btn btn-primary" onclick="showPage('contact')">&#127807; Get a Free Quote</button>
-          <button class="btn btn-outline-white" onclick="showPage('services')">View Services &rarr;</button>
+          <button class="btn btn-primary" onclick="showPage('contact')">🌿 Get a Free Quote</button>
+          <button class="btn btn-outline-white" onclick="showPage('services')">View Services →</button>
         </div>
         <div class="hero-stats fade-in fade-in-delay-4">
-          <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Locally Owned</div></div>
-          <div><div class="hero-stat-num">Free</div><div class="hero-stat-label">Estimates Always</div></div>
+          <div>
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Locally Owned</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">Free</div>
+            <div class="hero-stat-label">Estimates Always</div>
+          </div>
         </div>
       </div>
       <div class="hero-visual fade-in fade-in-delay-2">
         <div class="hero-card">
-          <div class="hero-card-icon">&#127968;</div>
+          <div class="hero-card-icon">🏡</div>
           <h3>What We Offer</h3>
-          <p>Complete residential lawn care for Kokomo homeowners &mdash; done right, every time.</p>
+          <p>Complete residential lawn care for Kokomo homeowners — done right, every time.</p>
           <ul class="hero-service-list">
             <li>Lawn Mowing &amp; Edging</li>
             <li>Weed Eating / String Trimming</li>
@@ -743,17 +765,17 @@
       <p class="section-sub">Everything your lawn needs, handled professionally and affordably by a local owner-operator you can trust.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon">&#127807;</div><h3>Lawn Mowing</h3><p>Regular, reliable mowing services to keep your lawn looking sharp. Consistent cuts at the right height for a healthy, beautiful yard.</p></div>
-      <div class="service-card"><div class="service-icon">&#9986;&#65039;</div><h3>Weed Eating &amp; Trimming</h3><p>Precision string trimming around edges, fences, trees, and hard-to-reach areas that a mower can't get to.</p></div>
-      <div class="service-card"><div class="service-icon">&#129704;</div><h3>Mulch Removal &amp; Installation</h3><p>Old mulch removed and fresh mulch installed around beds and trees. Improves moisture retention, curb appeal, and weed control.</p></div>
-      <div class="service-card"><div class="service-icon">&#127810;</div><h3>Leaf Removal</h3><p>Thorough leaf cleanup in fall and beyond. We bag, blow, and remove leaves so your lawn can breathe and stay healthy.</p></div>
-      <div class="service-card"><div class="service-icon">&#127793;</div><h3>Weed Pulling</h3><p>Manual weed removal from flower beds, walkways, and landscaping. Clean, hand-pulled weeds for a tidy, professional finish.</p></div>
-      <div class="service-card"><div class="service-icon">&#127807;</div><h3>Bush &amp; Hedge Trimming</h3><p>Neat, precise trimming of bushes, hedges, and shrubs. Keeps your landscaping looking clean, shaped, and well-maintained.</p></div>
-      <div class="service-card"><div class="service-icon">&#127811;</div><h3>Gutter Cleaning</h3><p>Full gutter cleaning to remove leaves, debris, and buildup. Keeps water flowing and protects your home from water damage.</p></div>
-      <div class="service-card"><div class="service-icon">&#10052;&#65039;</div><h3>Snow Removal &amp; Salting</h3><p>Reliable snow shoveling, snow blowing, and salting for driveways, sidewalks, and walkways. Stay safe all winter long.</p></div>
+      <div class="service-card"><div class="service-icon">🌿</div><h3>Lawn Mowing</h3><p>Regular, reliable mowing services to keep your lawn looking sharp. Consistent cuts at the right height for a healthy, beautiful yard.</p></div>
+      <div class="service-card"><div class="service-icon">✂️</div><h3>Weed Eating &amp; Trimming</h3><p>Precision string trimming around edges, fences, trees, and hard-to-reach areas that a mower can't get to.</p></div>
+      <div class="service-card"><div class="service-icon">🪨</div><h3>Mulch Removal &amp; Installation</h3><p>Old mulch removed and fresh mulch installed around beds and trees. Improves moisture retention, curb appeal, and weed control.</p></div>
+      <div class="service-card"><div class="service-icon">🍂</div><h3>Leaf Removal</h3><p>Thorough leaf cleanup in fall and beyond. We bag, blow, and remove leaves so your lawn can breathe and stay healthy.</p></div>
+      <div class="service-card"><div class="service-icon">🌱</div><h3>Weed Pulling</h3><p>Manual weed removal from flower beds, walkways, and landscaping. Clean, hand-pulled weeds for a tidy, professional finish.</p></div>
+      <div class="service-card"><div class="service-icon">🌿</div><h3>Bush &amp; Hedge Trimming</h3><p>Neat, precise trimming of bushes, hedges, and shrubs. Keeps your landscaping looking clean, shaped, and well-maintained.</p></div>
+      <div class="service-card"><div class="service-icon">🍃</div><h3>Gutter Cleaning</h3><p>Full gutter cleaning to remove leaves, debris, and buildup. Keeps water flowing and protects your home from water damage.</p></div>
+      <div class="service-card"><div class="service-icon">❄️</div><h3>Snow Removal &amp; Salting</h3><p>Reliable snow shoveling, snow blowing, and salting for driveways, sidewalks, and walkways. Stay safe all winter long.</p></div>
     </div>
     <div style="text-align:center; margin-top:40px;">
-      <button class="btn btn-primary" onclick="showPage('services')">See All Service Details &rarr;</button>
+      <button class="btn btn-primary" onclick="showPage('services')">See All Service Details →</button>
     </div>
   </div>
 
@@ -762,15 +784,15 @@
       <div class="section-header section-header-center">
         <span class="section-label">Why Morgan Lawn</span>
         <h2 class="section-title">Built on Trust. Driven by Quality.</h2>
-        <p class="section-sub">We're not a giant franchise. We're your neighbor &mdash; and we treat your lawn like it's our own.</p>
+        <p class="section-sub">We're not a giant franchise. We're your neighbor — and we treat your lawn like it's our own.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card"><div class="why-icon">&#129309;</div><h3>Honest &amp; Reliable</h3><p>We show up when we say we will. No surprises, no missed appointments, and always transparent pricing.</p></div>
-        <div class="why-card"><div class="why-icon">&#128241;</div><h3>Clear Communication</h3><p>You'll always know what's happening with your lawn. Easy scheduling, prompt responses, and updates you can count on.</p></div>
-        <div class="why-card"><div class="why-icon">&#128176;</div><h3>Affordable Pricing</h3><p>Competitive rates without cutting corners. Quality work at prices that make sense for local Kokomo homeowners.</p></div>
-        <div class="why-card"><div class="why-icon">&#127942;</div><h3>Owner-Operated</h3><p>When you hire Morgan Lawn Services, the owner handles your property personally &mdash; that means more attention to detail.</p></div>
-        <div class="why-card"><div class="why-icon">&#128205;</div><h3>Locally Rooted</h3><p>Based right here in Kokomo. We know the area, the neighborhoods, and we're invested in this community.</p></div>
-        <div class="why-card"><div class="why-icon">&#127775;</div><h3>Free Estimates</h3><p>No obligation, no pressure. We come look at your property and give you a clear, fair quote before any work begins.</p></div>
+        <div class="why-card"><div class="why-icon">🤝</div><h3>Honest &amp; Reliable</h3><p>We show up when we say we will. No surprises, no missed appointments, and always transparent pricing.</p></div>
+        <div class="why-card"><div class="why-icon">📱</div><h3>Clear Communication</h3><p>You'll always know what's happening with your lawn. Easy scheduling, prompt responses, and updates you can count on.</p></div>
+        <div class="why-card"><div class="why-icon">💰</div><h3>Affordable Pricing</h3><p>Competitive rates without cutting corners. Quality work at prices that make sense for local Kokomo homeowners.</p></div>
+        <div class="why-card"><div class="why-icon">🏆</div><h3>Owner-Operated</h3><p>When you hire Morgan Lawn Services, the owner handles your property personally — that means more attention to detail.</p></div>
+        <div class="why-card"><div class="why-icon">📍</div><h3>Locally Rooted</h3><p>Based right here in Kokomo. We know the area, the neighborhoods, and we're invested in this community.</p></div>
+        <div class="why-card"><div class="why-icon">🌟</div><h3>Free Estimates</h3><p>No obligation, no pressure. We come look at your property and give you a clear, fair quote before any work begins.</p></div>
       </div>
     </div>
   </div>
@@ -782,72 +804,302 @@
         <h2 class="section-title">Proudly Serving Kokomo &amp; Surrounding Communities</h2>
       </div>
       <div style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--gray-border);">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97566.2!2d-86.1336!3d40.4864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881594b21bb90409%3A0x9d1b2d7ac3df4b15!2sKokomo%2C%20IN!5e0!3m2!1sen!2sus!4v1" width="100%" height="380" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Morgan Lawn Services service area"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97566.2!2d-86.1336!3d40.4864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881594b21bb90409%3A0x9d1b2d7ac3df4b15!2sKokomo%2C%20IN!5e0!3m2!1sen!2sus!4v1" width="100%" height="380" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Morgan Lawn Services — Kokomo, Indiana service area"></iframe>
       </div>
       <div class="area-tags" style="margin-top:20px; justify-content:center;">
-        <span class="area-tag">&#128205; Kokomo</span>
-        <span class="area-tag">&#128205; Howard County</span>
-        <span class="area-tag">&#128205; Greentown</span>
-        <span class="area-tag">&#128205; Russiaville</span>
-        <span class="area-tag">&#128205; Bunker Hill</span>
-        <span class="area-tag">&#128205; Surrounding Areas</span>
+        <span class="area-tag">📍 Kokomo</span>
+        <span class="area-tag">📍 Howard County</span>
+        <span class="area-tag">📍 Greentown</span>
+        <span class="area-tag">📍 Russiaville</span>
+        <span class="area-tag">📍 Bunker Hill</span>
+        <span class="area-tag">📍 Surrounding Areas</span>
       </div>
-      <p style="text-align:center; font-size:0.9rem; color:var(--gray-mid); margin-top:12px;">Not sure if you're in our service area? Give us a call &mdash; we'll let you know!</p>
+      <p style="text-align:center; font-size:0.9rem; color:var(--gray-mid); margin-top:12px;">Not sure if you're in our service area? Give us a call — we'll let you know!</p>
     </div>
   </div>
 
   <div class="cta-band">
     <div class="cta-band-inner">
       <h2>Ready for a Lawn You'll Love?</h2>
-      <p>Get a free, no-obligation estimate today. We'll come look at your property and give you a clear, fair price &mdash; no pressure, no surprises.</p>
+      <p>Get a free, no-obligation estimate today. We'll come look at your property and give you a clear, fair price — no pressure, no surprises.</p>
       <div class="cta-band-actions">
-        <button class="btn btn-white" onclick="showPage('contact')">&#127807; Get a Free Quote</button>
+        <button class="btn btn-white" onclick="showPage('contact')">🌿 Get a Free Quote</button>
         <button class="btn btn-outline-white" onclick="showPage('services')">View Services</button>
       </div>
     </div>
   </div>
-</div>
 
-<!-- SERVICES PAGE -->
+</div><!-- /home -->
+
+
+<!-- ═══ SERVICES PAGE ═══ -->
 <div id="page-services" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Services</div><h1>Our Lawn Care Services</h1><p>Professional residential lawn care in Kokomo, Indiana. Every service delivered with reliability, care, and attention to detail.</p></div></div>
-  <div class="section">
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#127807;</div><h3>Lawn Mowing</h3></div><div class="service-detail-content"><p>A well-maintained lawn starts with consistent, professional mowing. We mow at the ideal height for your grass type, leaving clean, even cuts that promote healthy root growth and give your yard a sharp, manicured appearance.</p><p>Whether you need weekly, bi-weekly, or seasonal service, we work with your schedule and make sure your lawn looks its best all season long.</p><ul class="benefit-list"><li>Consistent cut height for healthier turf</li><li>Clean clippings management</li><li>Edging along walkways and driveways</li><li>Flexible scheduling options</li><li>Reliable, punctual service every visit</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Mowing Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#9986;&#65039;</div><h3>Weed Eating &amp; Trimming</h3></div><div class="service-detail-content"><p>Mowing only gets part of the job done. Our string trimming service reaches every corner, fence line, tree base, and border that a mower can't touch &mdash; giving your property a fully finished, professional look.</p><p>Included with most lawn mowing services, or available as a standalone visit for properties that need targeted attention.</p><ul class="benefit-list"><li>Precision trimming along all edges</li><li>Around fences, trees, and garden beds</li><li>Curb and sidewalk detailing</li><li>Blowing debris from hard surfaces</li><li>Complements mowing for a complete finish</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Trimming Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#129704;</div><h3>Mulch Removal &amp; Installation</h3></div><div class="service-detail-content"><p>Fresh mulch does more than just look great &mdash; it protects your plants, retains moisture, regulates soil temperature, and naturally suppresses weed growth. We deliver and professionally install quality mulch in all your flower beds, landscaping areas, and around trees.</p><p>Need the old mulch cleared out first? We handle full removal of old, worn-out mulch before installing a fresh, clean layer at the right depth for maximum benefit.</p><ul class="benefit-list"><li>Old mulch removal available</li><li>Dramatically improves curb appeal</li><li>Reduces watering needs by retaining moisture</li><li>Natural weed suppression</li><li>Protects plant roots from temperature extremes</li><li>Multiple mulch types available</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Mulch Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#127810;</div><h3>Leaf Removal</h3></div><div class="service-detail-content"><p>Left on your lawn, thick layers of leaves can smother grass, promote disease, and create a haven for pests over the winter. Our thorough leaf removal service keeps your lawn healthy heading into the cold months &mdash; and looking great in the process.</p><p>We rake, blow, and bag all leaves and debris, leaving your property completely clean and ready for the season ahead.</p><ul class="benefit-list"><li>Prevents lawn suffocation and disease</li><li>Complete cleanup &mdash; no leaving piles behind</li><li>Available for one-time or recurring seasonal service</li><li>Proper disposal or bagging included</li><li>Fast, efficient, and thorough</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Leaf Removal Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#127793;</div><h3>Weed Pulling</h3></div><div class="service-detail-content"><p>Weeds in your flower beds, garden borders, and walkways make even well-maintained lawns look unkempt. Our manual weed pulling service removes unwanted growth by the root, giving your landscape a clean, tidy, professional appearance.</p><p>Ideal for seasonal cleanups, new homeowners, or anyone who wants pristine beds without the back-breaking work.</p><ul class="benefit-list"><li>Root-removal for longer-lasting results</li><li>Safe around flowers, plants, and shrubs</li><li>Flower beds, borders, and walkways</li><li>Can be paired with mulch installation</li><li>Attention to detail &mdash; every weed addressed</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Weed Pulling Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#127807;</div><h3>Bush &amp; Hedge Trimming</h3></div><div class="service-detail-content"><p>Overgrown bushes and hedges can make even a well-maintained lawn look unkempt. Our trimming service shapes and cleans up all your shrubs, hedges, and ornamental bushes &mdash; giving your landscaping a neat, polished appearance.</p><p>Whether it's a light maintenance trim or cutting back heavy overgrowth, we handle it cleanly and efficiently.</p><ul class="benefit-list"><li>Neat shaping of hedges and shrubs</li><li>Promotes healthy plant growth</li><li>Improves curb appeal significantly</li><li>Debris cleanup included</li><li>Can be scheduled alongside mowing visits</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Trimming Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#127811;</div><h3>Gutter Cleaning</h3></div><div class="service-detail-content"><p>Clogged gutters cause water to back up and can lead to serious damage to your roof, siding, and foundation. Our gutter cleaning service removes all leaves, debris, and buildup &mdash; keeping water flowing freely and protecting your home.</p><p>Ideal to schedule in fall after leaves have dropped or in spring as part of a seasonal cleanup.</p><ul class="benefit-list"><li>Full removal of leaves and debris</li><li>Prevents water damage to your home</li><li>Protects roof, siding, and foundation</li><li>Spring and fall scheduling recommended</li><li>Quick, thorough, and safe</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Gutter Cleaning Quote &rarr;</button></div></div>
-  </div>
-  <div class="cta-band"><div class="cta-band-inner"><h2>Not Sure What Your Lawn Needs?</h2><p>Let us take a look &mdash; free of charge. We'll assess your property and recommend the right services for your specific situation.</p><div class="cta-band-actions"><button class="btn btn-white" onclick="showPage('contact')">&#127807; Request a Free Visit</button></div></div></div>
-</div>
-
-<!-- PRICING PAGE -->
-<div id="page-pricing" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Pricing</div><h1>Transparent, Affordable Pricing</h1><p>No hidden fees. No surprises. Just honest pricing for quality lawn care in Kokomo, Indiana.</p></div></div>
-  <div class="section">
-    <div class="section-header section-header-center"><span class="section-label">Lawn Mowing</span><h2 class="section-title">Mowing &amp; Maintenance Starting Prices</h2><p class="section-sub">Prices vary based on property size, terrain, and job complexity. All quotes are free and customized to your specific yard.</p></div>
-    <div class="pricing-grid">
-      <div class="pricing-card"><div class="pricing-icon">&#127968;</div><div class="pricing-tier">Small Yard</div><div class="pricing-price">$35<span>+/visit</span></div><p class="pricing-desc">Ideal for compact lots and smaller residential properties up to approx. &frac14; acre.</p><ul class="pricing-features"><li>Full lawn mowing</li><li>String trimming</li><li>Edging</li><li>Debris blowing</li></ul><button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div>
-      <div class="pricing-card featured"><div class="pricing-badge">Most Popular</div><div class="pricing-icon">&#127969;</div><div class="pricing-tier">Medium Yard</div><div class="pricing-price">$55<span>+/visit</span></div><p class="pricing-desc">For average residential lots between &frac14; and &frac12; acre &mdash; the most common yard size in Kokomo.</p><ul class="pricing-features"><li>Full lawn mowing</li><li>String trimming</li><li>Edging all borders</li><li>Debris blowing</li><li>Standard cleanup</li></ul><button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div>
-      <div class="pricing-card"><div class="pricing-icon">&#127960;&#65039;</div><div class="pricing-tier">Large Yard</div><div class="pricing-price">$80<span>+/visit</span></div><p class="pricing-desc">For larger lots over &frac12; acre with more ground to cover and additional trimming.</p><ul class="pricing-features"><li>Full lawn mowing</li><li>Extensive trimming</li><li>Edging all surfaces</li><li>Complete debris blowing</li><li>Priority scheduling</li></ul><button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Services</div>
+      <h1>Our Lawn Care Services</h1>
+      <p>Professional residential lawn care in Kokomo, Indiana. Every service delivered with reliability, care, and attention to detail.</p>
     </div>
-    <div style="margin-top:64px;"><div class="section-header section-header-center"><span class="section-label">Additional Services</span><h2 class="section-title">Specialty Service Pricing</h2></div><div class="pricing-grid"><div class="pricing-card"><div class="pricing-icon">&#129704;</div><div class="pricing-tier">Mulch Removal &amp; Installation</div><div class="pricing-price">$75<span>+/project</span></div><p class="pricing-desc">Old mulch removal and fresh mulch installation around beds, trees, and landscaped areas.</p><ul class="pricing-features"><li>Old mulch removal included</li><li>Fresh quality mulch installed</li><li>Proper 2&ndash;3&quot; depth application</li><li>Edged and finished clean</li></ul><button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div><div class="pricing-card"><div class="pricing-icon">&#127810;</div><div class="pricing-tier">Leaf Removal</div><div class="pricing-price">$60<span>+/visit</span></div><p class="pricing-desc">Complete leaf cleanup and removal for small to large properties.</p><ul class="pricing-features"><li>Full raking and blowing</li><li>Bagging and removal</li><li>Front &amp; back yard</li><li>One-time or seasonal service</li></ul><button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div></div></div>
-    <div style="margin-top:64px;"><div class="section-header section-header-center"><span class="section-label">Winter Services</span><h2 class="section-title">Snow Removal &amp; Ice Control Pricing</h2><p class="section-sub">Stay safe all winter. Pricing based on property size and service type.</p></div><div class="pricing-grid"><div class="pricing-card"><div class="pricing-icon">&#10052;&#65039;</div><div class="pricing-tier">Snow Shoveling</div><div class="pricing-price">$40<span>+/visit</span></div><p class="pricing-desc">Hand shoveling of driveways, sidewalks, and walkways.</p><ul class="pricing-features"><li>Driveway &amp; sidewalk clearing</li><li>Steps and walkways included</li><li>Fast response after snowfall</li><li>One-time or seasonal service</li></ul><button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div><div class="pricing-card featured"><div class="pricing-badge">Most Popular</div><div class="pricing-icon">&#127784;&#65039;</div><div class="pricing-tier">Snow Blowing</div><div class="pricing-price">$65<span>+/visit</span></div><p class="pricing-desc">Power snow blowing for larger driveways and heavier snowfall.</p><ul class="pricing-features"><li>Full driveway snow blowing</li><li>Sidewalks &amp; walkways cleared</li><li>Handles heavy snowfall</li><li>One-time or seasonal service</li><li>Can be bundled with salting</li></ul><button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div><div class="pricing-card"><div class="pricing-icon">&#129474;</div><div class="pricing-tier">Ice Control &amp; Salting</div><div class="pricing-price">$30<span>+/visit</span></div><p class="pricing-desc">Salt and ice melt application to prevent dangerous icing.</p><ul class="pricing-features"><li>Driveway &amp; walkway treatment</li><li>Pet-safe options available</li><li>Pre-treatment before storms</li><li>Bundle with snow removal</li></ul><button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button></div></div></div>
-    <div style="background:var(--green-pale); border:1px solid var(--green-light); border-radius:var(--radius-lg); padding:32px 36px; margin-top:48px; text-align:center;"><div style="font-size:1.8rem; margin-bottom:12px;">&#128203;</div><h3 style="font-family:var(--font-display); font-size:1.3rem; color:var(--green-dark); margin-bottom:10px;">Prices Are Starting Points &mdash; Your Quote Is Free</h3><p style="font-size:0.9rem; color:var(--gray-mid); max-width:580px; margin:0 auto; line-height:1.7;">Every property is different. Pricing depends on your lot size, terrain, obstacles, service frequency, and job complexity. All listed prices are starting estimates. We'll always give you an exact quote before any work begins &mdash; no surprises, ever.</p><button class="btn btn-primary" style="margin-top:24px;" onclick="showPage('contact')">Get My Custom Quote &rarr;</button></div>
   </div>
-</div>
 
-<!-- ABOUT PAGE -->
+  <div class="section">
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🌿</div><h3>Lawn Mowing</h3></div>
+      <div class="service-detail-content">
+        <p>A well-maintained lawn starts with consistent, professional mowing. We mow at the ideal height for your grass type, leaving clean, even cuts that promote healthy root growth and give your yard a sharp, manicured appearance.</p>
+        <p>Whether you need weekly, bi-weekly, or seasonal service, we work with your schedule and make sure your lawn looks its best all season long.</p>
+        <ul class="benefit-list">
+          <li>Consistent cut height for healthier turf</li>
+          <li>Clean clippings management</li>
+          <li>Edging along walkways and driveways</li>
+          <li>Flexible scheduling options</li>
+          <li>Reliable, punctual service every visit</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Mowing Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">✂️</div><h3>Weed Eating &amp; Trimming</h3></div>
+      <div class="service-detail-content">
+        <p>Mowing only gets part of the job done. Our string trimming service reaches every corner, fence line, tree base, and border that a mower can't touch — giving your property a fully finished, professional look.</p>
+        <p>Included with most lawn mowing services, or available as a standalone visit for properties that need targeted attention.</p>
+        <ul class="benefit-list">
+          <li>Precision trimming along all edges</li>
+          <li>Around fences, trees, and garden beds</li>
+          <li>Curb and sidewalk detailing</li>
+          <li>Blowing debris from hard surfaces</li>
+          <li>Complements mowing for a complete finish</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Trimming Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🪨</div><h3>Mulch Removal &amp; Installation</h3></div>
+      <div class="service-detail-content">
+        <p>Fresh mulch does more than just look great — it protects your plants, retains moisture, regulates soil temperature, and naturally suppresses weed growth. We deliver and professionally install quality mulch in all your flower beds, landscaping areas, and around trees.</p>
+        <p>Need the old mulch cleared out first? We handle full removal of old, worn-out mulch before installing a fresh, clean layer at the right depth for maximum benefit.</p>
+        <ul class="benefit-list">
+          <li>Old mulch removal available</li>
+          <li>Dramatically improves curb appeal</li>
+          <li>Reduces watering needs by retaining moisture</li>
+          <li>Natural weed suppression</li>
+          <li>Protects plant roots from temperature extremes</li>
+          <li>Multiple mulch types available</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Mulch Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🍂</div><h3>Leaf Removal</h3></div>
+      <div class="service-detail-content">
+        <p>Left on your lawn, thick layers of leaves can smother grass, promote disease, and create a haven for pests over the winter. Our thorough leaf removal service keeps your lawn healthy heading into the cold months — and looking great in the process.</p>
+        <p>We rake, blow, and bag all leaves and debris, leaving your property completely clean and ready for the season ahead.</p>
+        <ul class="benefit-list">
+          <li>Prevents lawn suffocation and disease</li>
+          <li>Complete cleanup — no leaving piles behind</li>
+          <li>Available for one-time or recurring seasonal service</li>
+          <li>Proper disposal or bagging included</li>
+          <li>Fast, efficient, and thorough</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Leaf Removal Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🌱</div><h3>Weed Pulling</h3></div>
+      <div class="service-detail-content">
+        <p>Weeds in your flower beds, garden borders, and walkways make even well-maintained lawns look unkempt. Our manual weed pulling service removes unwanted growth by the root, giving your landscape a clean, tidy, professional appearance.</p>
+        <p>Ideal for seasonal cleanups, new homeowners, or anyone who wants pristine beds without the back-breaking work.</p>
+        <ul class="benefit-list">
+          <li>Root-removal for longer-lasting results</li>
+          <li>Safe around flowers, plants, and shrubs</li>
+          <li>Flower beds, borders, and walkways</li>
+          <li>Can be paired with mulch installation</li>
+          <li>Attention to detail — every weed addressed</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Weed Pulling Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🌿</div><h3>Bush &amp; Hedge Trimming</h3></div>
+      <div class="service-detail-content">
+        <p>Overgrown bushes and hedges can make even a well-maintained lawn look unkempt. Our trimming service shapes and cleans up all your shrubs, hedges, and ornamental bushes — giving your landscaping a neat, polished appearance.</p>
+        <p>Whether it's a light maintenance trim or cutting back heavy overgrowth, we handle it cleanly and efficiently.</p>
+        <ul class="benefit-list">
+          <li>Neat shaping of hedges and shrubs</li>
+          <li>Promotes healthy plant growth</li>
+          <li>Improves curb appeal significantly</li>
+          <li>Debris cleanup included</li>
+          <li>Can be scheduled alongside mowing visits</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Trimming Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🍃</div><h3>Gutter Cleaning</h3></div>
+      <div class="service-detail-content">
+        <p>Clogged gutters cause water to back up and can lead to serious damage to your roof, siding, and foundation. Our gutter cleaning service removes all leaves, debris, and buildup — keeping water flowing freely and protecting your home.</p>
+        <p>Ideal to schedule in fall after leaves have dropped or in spring as part of a seasonal cleanup.</p>
+        <ul class="benefit-list">
+          <li>Full removal of leaves and debris</li>
+          <li>Prevents water damage to your home</li>
+          <li>Protects roof, siding, and foundation</li>
+          <li>Spring and fall scheduling recommended</li>
+          <li>Quick, thorough, and safe</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Gutter Cleaning Quote →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <h2>Not Sure What Your Lawn Needs?</h2>
+      <p>Let us take a look — free of charge. We'll assess your property and recommend the right services for your specific situation.</p>
+      <div class="cta-band-actions">
+        <button class="btn btn-white" onclick="showPage('contact')">🌿 Request a Free Visit</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /services -->
+
+
+<!-- ═══ PRICING PAGE ═══ -->
+<div id="page-pricing" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Pricing</div>
+      <h1>Transparent, Affordable Pricing</h1>
+      <p>No hidden fees. No surprises. Just honest pricing for quality lawn care in Kokomo, Indiana.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header section-header-center">
+      <span class="section-label">Lawn Mowing</span>
+      <h2 class="section-title">Mowing &amp; Maintenance Starting Prices</h2>
+      <p class="section-sub">Prices vary based on property size, terrain, and job complexity. All quotes are free and customized to your specific yard.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-icon">🏠</div>
+        <div class="pricing-tier">Small Yard</div>
+        <div class="pricing-price">$35<span>+/visit</span></div>
+        <p class="pricing-desc">Ideal for compact lots and smaller residential properties up to approx. ¼ acre.</p>
+        <ul class="pricing-features"><li>Full lawn mowing</li><li>String trimming</li><li>Edging</li><li>Debris blowing</li></ul>
+        <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-icon">🏡</div>
+        <div class="pricing-tier">Medium Yard</div>
+        <div class="pricing-price">$55<span>+/visit</span></div>
+        <p class="pricing-desc">For average residential lots between ¼ and ½ acre — the most common yard size in Kokomo.</p>
+        <ul class="pricing-features"><li>Full lawn mowing</li><li>String trimming</li><li>Edging all borders</li><li>Debris blowing</li><li>Standard cleanup</li></ul>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-icon">🏘️</div>
+        <div class="pricing-tier">Large Yard</div>
+        <div class="pricing-price">$80<span>+/visit</span></div>
+        <p class="pricing-desc">For larger lots over ½ acre with more ground to cover and additional trimming.</p>
+        <ul class="pricing-features"><li>Full lawn mowing</li><li>Extensive trimming</li><li>Edging all surfaces</li><li>Complete debris blowing</li><li>Priority scheduling</li></ul>
+        <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+      </div>
+    </div>
+
+    <div style="margin-top: 64px;">
+      <div class="section-header section-header-center">
+        <span class="section-label">Additional Services</span>
+        <h2 class="section-title">Specialty Service Pricing</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon">🪨</div>
+          <div class="pricing-tier">Mulch Removal &amp; Installation</div>
+          <div class="pricing-price">$75<span>+/project</span></div>
+          <p class="pricing-desc">Old mulch removal and fresh mulch installation around beds, trees, and landscaped areas. Final price based on square footage and mulch type.</p>
+          <ul class="pricing-features"><li>Old mulch removal included</li><li>Fresh quality mulch installed</li><li>Proper 2–3" depth application</li><li>Edged and finished clean</li></ul>
+          <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon">🍂</div>
+          <div class="pricing-tier">Leaf Removal</div>
+          <div class="pricing-price">$60<span>+/visit</span></div>
+          <p class="pricing-desc">Complete leaf cleanup and removal for small to large properties. Price depends on volume of leaves and lot size.</p>
+          <ul class="pricing-features"><li>Full raking and blowing</li><li>Bagging and removal</li><li>Front &amp; back yard</li><li>One-time or seasonal service</li></ul>
+          <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 64px;">
+      <div class="section-header section-header-center">
+        <span class="section-label">Winter Services</span>
+        <h2 class="section-title">Snow Removal &amp; Ice Control Pricing</h2>
+        <p class="section-sub">Stay safe all winter. Pricing based on property size and service type.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon">❄️</div>
+          <div class="pricing-tier">Snow Shoveling</div>
+          <div class="pricing-price">$40<span>+/visit</span></div>
+          <p class="pricing-desc">Hand shoveling of driveways, sidewalks, and walkways. Great for smaller properties or targeted areas.</p>
+          <ul class="pricing-features"><li>Driveway &amp; sidewalk clearing</li><li>Steps and walkways included</li><li>Fast response after snowfall</li><li>One-time or seasonal service</li></ul>
+          <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-icon">🌨️</div>
+          <div class="pricing-tier">Snow Blowing</div>
+          <div class="pricing-price">$65<span>+/visit</span></div>
+          <p class="pricing-desc">Power snow blowing for larger driveways and heavier snowfall. Faster and more thorough than shoveling alone.</p>
+          <ul class="pricing-features"><li>Full driveway snow blowing</li><li>Sidewalks &amp; walkways cleared</li><li>Handles heavy snowfall</li><li>One-time or seasonal service</li><li>Can be bundled with salting</li></ul>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon">🧂</div>
+          <div class="pricing-tier">Ice Control &amp; Salting</div>
+          <div class="pricing-price">$30<span>+/visit</span></div>
+          <p class="pricing-desc">Salt and ice melt application to prevent dangerous icing on driveways, walkways, and steps.</p>
+          <ul class="pricing-features"><li>Driveway &amp; walkway treatment</li><li>Pet-safe options available</li><li>Pre-treatment before storms</li><li>Bundle with snow removal</li></ul>
+          <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--green-pale); border:1px solid var(--green-light); border-radius:var(--radius-lg); padding:32px 36px; margin-top:48px; text-align:center;">
+      <div style="font-size:1.8rem; margin-bottom:12px;">📋</div>
+      <h3 style="font-family:var(--font-display); font-size:1.3rem; color:var(--green-dark); margin-bottom:10px;">Prices Are Starting Points — Your Quote Is Free</h3>
+      <p style="font-size:0.9rem; color:var(--gray-mid); max-width:580px; margin:0 auto; line-height:1.7;">Every property is different. Pricing depends on your lot size, terrain, obstacles, service frequency, and job complexity. All listed prices are starting estimates. We'll always give you an exact quote before any work begins — no surprises, ever.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="showPage('contact')">Get My Custom Quote →</button>
+    </div>
+  </div>
+</div><!-- /pricing -->
+
+
+<!-- ═══ ABOUT PAGE ═══ -->
 <div id="page-about" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / About</div><h1>About Morgan Lawn Services</h1><p>A locally owned, owner-operated lawn care business built on hard work, honesty, and genuine care for the Kokomo community.</p></div></div>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / About</div>
+      <h1>About Morgan Lawn Services</h1>
+      <p>A locally owned, owner-operated lawn care business built on hard work, honesty, and genuine care for the Kokomo community.</p>
+    </div>
+  </div>
+
   <div class="section">
     <div class="about-grid">
       <div class="about-visual">
         <div class="about-big-letter">M</div>
         <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:12px;">Our Story</h2>
-        <p style="font-size:0.9rem; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:24px;">Built from the ground up right here in Kokomo, Indiana &mdash; with a truck, a mower, and a commitment to doing the job right every single time.</p>
+        <p style="font-size:0.9rem; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:24px;">Built from the ground up right here in Kokomo, Indiana — with a truck, a mower, and a commitment to doing the job right every single time.</p>
         <div class="about-values">
           <div class="about-value"><div class="about-value-dot"></div> Reliability you can count on</div>
           <div class="about-value"><div class="about-value-dot"></div> Clear, honest communication</div>
@@ -858,16 +1110,16 @@
       </div>
       <div class="about-content">
         <p>Morgan Lawn Services was started with a simple mission: give Kokomo homeowners a lawn care company they can actually rely on. No missed appointments, no vague pricing, no strangers who don't care about your property. Just dependable, professional service from an owner who shows up and gets the job done right.</p>
-        <p>As an owner-operated business, every lawn we service gets the full attention of someone who genuinely takes pride in their work. When you hire Morgan Lawn Services, you're not getting a rotation of different crew members &mdash; you're getting the owner, personally invested in making your yard look its best.</p>
+        <p>As an owner-operated business, every lawn we service gets the full attention of someone who genuinely takes pride in their work. When you hire Morgan Lawn Services, you're not getting a rotation of different crew members — you're getting the owner, personally invested in making your yard look its best.</p>
         <p>We built this business on the values that matter most to homeowners: showing up on time, communicating clearly, charging fair prices, and delivering results you can see and be proud of. In a world where that kind of service is harder to find, we make it our standard.</p>
-        <p>Our vision extends beyond today. While we currently serve residential customers throughout the Kokomo area, we're building toward becoming a full-service lawn care and landscaping company &mdash; with the same community-first values that got us here, at every stage of growth.</p>
+        <p>Our vision extends beyond today. While we currently serve residential customers throughout the Kokomo area, we're building toward becoming a full-service lawn care and landscaping company — with the same community-first values that got us here, at every stage of growth.</p>
         <div class="value-pills">
-          <span class="value-pill">&#129309; Reliability</span>
-          <span class="value-pill">&#128222; Communication</span>
-          <span class="value-pill">&#128176; Affordability</span>
-          <span class="value-pill">&#127942; Quality Work</span>
-          <span class="value-pill">&#128205; Local &amp; Trusted</span>
-          <span class="value-pill">&#127793; Growing Together</span>
+          <span class="value-pill">🤝 Reliability</span>
+          <span class="value-pill">📞 Communication</span>
+          <span class="value-pill">💰 Affordability</span>
+          <span class="value-pill">🏆 Quality Work</span>
+          <span class="value-pill">📍 Local &amp; Trusted</span>
+          <span class="value-pill">🌱 Growing Together</span>
         </div>
         <div style="margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;">
           <button class="btn btn-primary" onclick="showPage('contact')">Get a Free Quote</button>
@@ -876,89 +1128,277 @@
       </div>
     </div>
   </div>
-  <div class="section-full"><div class="section-full-inner"><div class="vision-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;"><div><span class="section-label">Looking Ahead</span><h2 class="section-title">Built to Grow With Kokomo</h2><p class="section-sub" style="max-width:100%;">We started small on purpose &mdash; so we could get it right before getting bigger. As we grow, we're committed to never losing the personal touch and exceptional service quality that defines us today.</p><p style="font-size:0.9rem; color:var(--gray-mid); line-height:1.7; margin-top:16px;">Our future plans include expanding into full landscaping services, commercial properties, and growing a team that shares our values. But one thing will never change: every customer will be treated like a neighbor, not a number.</p></div><div class="vision-cards" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;"><div style="background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-border);"><div style="font-size:2rem; margin-bottom:8px;">&#127969;</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--green-dark);">Residential</div><div style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Current Focus</div></div><div style="background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-border);"><div style="font-size:2rem; margin-bottom:8px;">&#127795;</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--green-dark);">Landscaping</div><div style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Coming Soon</div></div><div style="background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-border);"><div style="font-size:2rem; margin-bottom:8px;">&#127962;</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--green-dark);">Commercial</div><div style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Future Plans</div></div><div style="background:var(--green-dark); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm);"><div style="font-size:2rem; margin-bottom:8px;">&#128205;</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--white);">Kokomo First</div><div style="font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:4px;">Always &amp; Forever</div></div></div></div></div></div>
-</div>
 
-<!-- GALLERY PAGE -->
-<div id="page-gallery" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Gallery</div><h1>Our Work Gallery</h1><p>Before-and-after transformations, mulch installations, and lawn maintenance showcases from around Kokomo.</p></div></div>
-  <div class="section">
-    <div class="section-header"><span class="section-label">Before &amp; After</span><h2 class="section-title">Lawn Transformations</h2></div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg,#c8e6c9,#4CAF50);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">&#127807;</text></svg></div><div class="gallery-label"><div class="gallery-tag">Before / After</div><div>Overgrown Lawn Cleanup</div></div></div>
-      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg,#a5d6a7,#2E7D32);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">&#9986;</text></svg></div><div class="gallery-label"><div class="gallery-tag">Mowing</div><div>Precision Lawn Mow &amp; Edge</div></div></div>
-      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg,#8d6e63,#5d4037);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">&#129704;</text></svg></div><div class="gallery-label"><div class="gallery-tag">Mulch Install</div><div>Fresh Mulch &mdash; Front Beds</div></div></div>
-      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg,#e65100,#bf360c);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">&#127810;</text></svg></div><div class="gallery-label"><div class="gallery-tag">Leaf Removal</div><div>Fall Cleanup &mdash; Full Property</div></div></div>
-      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg,#1B5E20,#4CAF50);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">&#127793;</text></svg></div><div class="gallery-label"><div class="gallery-tag">Before / After</div><div>Weed Pulling &mdash; Garden Beds</div></div></div>
-      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg,#33691e,#558b2f);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">&#127969;</text></svg></div><div class="gallery-label"><div class="gallery-tag">Full Service</div><div>Complete Lawn Maintenance</div></div></div>
+  <div class="section-full">
+    <div class="section-full-inner">
+      <div class="vision-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+        <div>
+          <span class="section-label">Looking Ahead</span>
+          <h2 class="section-title">Built to Grow With Kokomo</h2>
+          <p class="section-sub" style="max-width:100%;">We started small on purpose — so we could get it right before getting bigger. As we grow, we're committed to never losing the personal touch and exceptional service quality that defines us today.</p>
+          <p style="font-size:0.9rem; color:var(--gray-mid); line-height:1.7; margin-top:16px;">Our future plans include expanding into full landscaping services, commercial properties, and growing a team that shares our values. But one thing will never change: every customer will be treated like a neighbor, not a number.</p>
+        </div>
+        <div class="vision-cards" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-border);"><div style="font-size:2rem; margin-bottom:8px;">🏡</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--green-dark);">Residential</div><div style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Current Focus</div></div>
+          <div style="background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-border);"><div style="font-size:2rem; margin-bottom:8px;">🌳</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--green-dark);">Landscaping</div><div style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Coming Soon</div></div>
+          <div style="background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-border);"><div style="font-size:2rem; margin-bottom:8px;">🏢</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--green-dark);">Commercial</div><div style="font-size:0.8rem; color:var(--gray-mid); margin-top:4px;">Future Plans</div></div>
+          <div style="background:var(--green-dark); border-radius:var(--radius); padding:28px; text-align:center; box-shadow:var(--shadow-sm);"><div style="font-size:2rem; margin-bottom:8px;">📍</div><div style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--white);">Kokomo First</div><div style="font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:4px;">Always &amp; Forever</div></div>
+        </div>
+      </div>
     </div>
-    <div style="background:var(--green-pale); border-radius:var(--radius-lg); padding:40px; margin-top:48px; text-align:center; border:1px solid var(--green-light);"><div style="font-size:2rem; margin-bottom:12px;">&#128247;</div><h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--green-dark); margin-bottom:10px;">More Photos Coming Soon!</h3><p style="font-size:0.9rem; color:var(--gray-mid); max-width:480px; margin:0 auto; line-height:1.7;">We're actively adding photos from our latest Kokomo projects. Check back soon &mdash; or follow us on social media for real-time updates!</p><button class="btn btn-primary" style="margin-top:24px;" onclick="showPage('contact')">Request a Quote Today</button></div>
   </div>
-</div>
+</div><!-- /about -->
 
-<!-- REVIEWS PAGE hidden -->
+
+<!-- ═══ GALLERY PAGE ═══ -->
+<div id="page-gallery" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Gallery</div>
+      <h1>Our Work Gallery</h1>
+      <p>Before-and-after transformations, mulch installations, and lawn maintenance showcases from around Kokomo.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">Before &amp; After</span>
+      <h2 class="section-title">Lawn Transformations</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg, #c8e6c9, #4CAF50);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">🌿</text></svg></div><div class="gallery-label"><div class="gallery-tag">Before / After</div><div>Overgrown Lawn Cleanup</div></div></div>
+      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg, #a5d6a7, #2E7D32);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">✂️</text></svg></div><div class="gallery-label"><div class="gallery-tag">Mowing</div><div>Precision Lawn Mow &amp; Edge</div></div></div>
+      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg, #8d6e63, #5d4037);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">🪨</text></svg></div><div class="gallery-label"><div class="gallery-tag">Mulch Install</div><div>Fresh Mulch — Front Beds</div></div></div>
+      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg, #e65100, #bf360c);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">🍂</text></svg></div><div class="gallery-label"><div class="gallery-tag">Leaf Removal</div><div>Fall Cleanup — Full Property</div></div></div>
+      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg, #1B5E20, #4CAF50);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">🌱</text></svg></div><div class="gallery-label"><div class="gallery-tag">Before / After</div><div>Weed Pulling — Garden Beds</div></div></div>
+      <div class="gallery-item"><div class="gallery-visual" style="background:linear-gradient(135deg, #33691e, #558b2f);"><svg width="80" height="80" viewBox="0 0 80 80"><text y="60" font-size="60">🏡</text></svg></div><div class="gallery-label"><div class="gallery-tag">Full Service</div><div>Complete Lawn Maintenance</div></div></div>
+    </div>
+
+    <div style="background:var(--green-pale); border-radius:var(--radius-lg); padding:40px; margin-top:48px; text-align:center; border:1px solid var(--green-light);">
+      <div style="font-size:2rem; margin-bottom:12px;">📸</div>
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--green-dark); margin-bottom:10px;">More Photos Coming Soon!</h3>
+      <p style="font-size:0.9rem; color:var(--gray-mid); max-width:480px; margin:0 auto; line-height:1.7;">We're actively adding photos from our latest Kokomo projects. Check back soon — or follow us on social media for real-time updates!</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="showPage('contact')">Request a Quote Today</button>
+    </div>
+  </div>
+</div><!-- /gallery -->
+
+
+<!-- ═══ REVIEWS PAGE — hidden until real reviews available ═══ -->
 <div id="page-reviews" class="page" style="display:none !important;">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Reviews</div><h1>Customer Reviews</h1></div></div>
-  <div class="section"><div class="reviews-grid"><div class="review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Best lawn service I've had in Kokomo.</p><div class="reviewer"><div class="reviewer-avatar">JT</div><div><div class="reviewer-name">James T.</div><div class="reviewer-location">Kokomo, IN</div></div></div></div></div></div>
-</div>
-
-<!-- WINTER SERVICES PAGE -->
-<div id="page-winter" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Winter Services</div><h1>Winter Services</h1><p>Reliable snow removal and ice control for Kokomo homeowners. Stay safe and clear all season long.</p></div></div>
-  <div class="section">
-    <div class="section-header section-header-center"><span class="section-label">Winter Coverage</span><h2 class="section-title">We've Got You Covered When It Snows</h2><p class="section-sub">Don't let a Kokomo winter slow you down. We offer fast, dependable snow and ice services for driveways, sidewalks, and walkways.</p></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#10052;&#65039;</div><h3>Snow Shoveling &amp; Snow Blowing</h3></div><div class="service-detail-content"><p>Whether it's a light dusting or a heavy snowfall, we'll clear your driveway, sidewalks, and walkways quickly and thoroughly. We use both shoveling and snow blowing equipment to handle any amount of snow efficiently.</p><p>Available for one-time visits or recurring service throughout the winter season. We monitor weather conditions and aim to get to you as soon as possible after snowfall.</p><ul class="benefit-list"><li>Driveways, sidewalks, and walkways cleared</li><li>Shoveling and snow blowing available</li><li>Fast response after snowfall</li><li>One-time or seasonal service options</li><li>Safe clearing without damaging surfaces</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Snow Removal Quote &rarr;</button></div></div>
-    <div class="service-detail"><div class="service-detail-visual"><div class="big-icon">&#129474;</div><h3>Ice Control &amp; Salting</h3></div><div class="service-detail-content"><p>Snow removal alone isn't always enough &mdash; ice buildup on driveways and walkways is a serious safety hazard. Our salting service applies ice melt to treated surfaces to prevent dangerous icing and keep your property safe.</p><p>Can be done as a standalone service or combined with snow removal for complete winter coverage.</p><ul class="benefit-list"><li>Prevents dangerous ice formation</li><li>Driveways, walkways, and steps treated</li><li>Pet-safe ice melt options available</li><li>Can be bundled with snow removal</li><li>Pre-treatment available before storms</li></ul><button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Salting Quote &rarr;</button></div></div>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Reviews</div>
+      <h1>Customer Reviews</h1>
+      <p>See what Kokomo homeowners are saying about Morgan Lawn Services.</p>
+    </div>
   </div>
-  <div class="section-full"><div class="section-full-inner"><div class="section-header section-header-center"><span class="section-label">Why Choose Us</span><h2 class="section-title">Reliable Winter Service You Can Count On</h2></div><div class="why-grid"><div class="why-card"><div class="why-icon">&#9889;</div><h3>Fast Response</h3><p>We monitor weather and aim to get to your property quickly after snowfall so you're not stuck waiting.</p></div><div class="why-card"><div class="why-icon">&#129309;</div><h3>Reliable &amp; Consistent</h3><p>Same owner, same quality every visit. No sending random crews &mdash; you know who's showing up.</p></div><div class="why-card"><div class="why-icon">&#10052;&#65039;</div><h3>Full Winter Coverage</h3><p>Snow removal and salting available together or separately. Customize your service to fit your needs and budget.</p></div><div class="why-card"><div class="why-icon">&#128176;</div><h3>Affordable Rates</h3><p>Fair, transparent pricing with free estimates. No surprise charges after the job is done.</p></div></div></div></div>
-  <div class="cta-band"><div class="cta-band-inner"><h2>Get Ready Before the First Snow</h2><p>Don't wait until the storm hits. Contact us now to set up your winter service plan and make sure you're covered all season.</p><div class="cta-band-actions"><button class="btn btn-white" onclick="showPage('contact')">&#10052;&#65039; Get a Winter Services Quote</button><button class="btn btn-outline-white" onclick="showPage('services')">View All Services</button></div></div></div>
-</div>
-
-<!-- FAQ PAGE -->
-<div id="page-faq" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / FAQ</div><h1>Frequently Asked Questions</h1><p>Everything you need to know about working with Morgan Lawn Services in Kokomo, Indiana.</p></div></div>
   <div class="section">
-    <div class="section-header section-header-center"><h2 class="section-title">Got Questions? We've Got Answers.</h2></div>
+    <div style="background:var(--green-dark); border-radius:var(--radius-lg); padding:48px; text-align:center; color:var(--white); margin-bottom:48px;">
+      <div style="font-size:4rem; line-height:1; font-family:var(--font-display); font-weight:900;">5.0</div>
+      <div style="font-size:2rem; color:#FFC107; margin:8px 0; letter-spacing:4px;">★★★★★</div>
+      <div style="font-size:0.9rem; color:rgba(255,255,255,0.7);">Based on customer reviews · Kokomo, Indiana</div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">Best lawn service I've had in Kokomo. Always on time, great communication, and my yard looks amazing every single time. Highly recommend!</p><div class="reviewer"><div class="reviewer-avatar">JT</div><div><div class="reviewer-name">James T.</div><div class="reviewer-location">Kokomo, IN</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">Finally a lawn company that actually shows up! Fair prices, very professional, and he takes real pride in his work. My yard has never looked better.</p><div class="reviewer"><div class="reviewer-avatar">SR</div><div><div class="reviewer-name">Sarah R.</div><div class="reviewer-location">Kokomo, IN</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">Had mulch installed and the yard weeded — came out beautiful. Very affordable and the communication throughout was great. Will definitely use again!</p><div class="reviewer"><div class="reviewer-avatar">DM</div><div><div class="reviewer-name">David M.</div><div class="reviewer-location">Kokomo, IN</div></div></div></div>
+    </div>
+  </div>
+</div><!-- /reviews hidden -->
+
+
+<!-- ═══ WINTER SERVICES PAGE ═══ -->
+<div id="page-winter" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Winter Services</div>
+      <h1>Winter Services</h1>
+      <p>Reliable snow removal and ice control for Kokomo homeowners. Stay safe and clear all season long.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header section-header-center">
+      <span class="section-label">Winter Coverage</span>
+      <h2 class="section-title">We've Got You Covered When It Snows</h2>
+      <p class="section-sub">Don't let a Kokomo winter slow you down. We offer fast, dependable snow and ice services for driveways, sidewalks, and walkways.</p>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">❄️</div><h3>Snow Shoveling &amp; Snow Blowing</h3></div>
+      <div class="service-detail-content">
+        <p>Whether it's a light dusting or a heavy snowfall, we'll clear your driveway, sidewalks, and walkways quickly and thoroughly. We use both shoveling and snow blowing equipment to handle any amount of snow efficiently.</p>
+        <p>Available for one-time visits or recurring service throughout the winter season. We monitor weather conditions and aim to get to you as soon as possible after snowfall.</p>
+        <ul class="benefit-list">
+          <li>Driveways, sidewalks, and walkways cleared</li>
+          <li>Shoveling and snow blowing available</li>
+          <li>Fast response after snowfall</li>
+          <li>One-time or seasonal service options</li>
+          <li>Safe clearing without damaging surfaces</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Snow Removal Quote →</button>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-detail-visual"><div class="big-icon">🧂</div><h3>Ice Control &amp; Salting</h3></div>
+      <div class="service-detail-content">
+        <p>Snow removal alone isn't always enough — ice buildup on driveways and walkways is a serious safety hazard. Our salting service applies ice melt to treated surfaces to prevent dangerous icing and keep your property safe for your family and guests.</p>
+        <p>Can be done as a standalone service or combined with snow removal for complete winter coverage.</p>
+        <ul class="benefit-list">
+          <li>Prevents dangerous ice formation</li>
+          <li>Driveways, walkways, and steps treated</li>
+          <li>Pet-safe ice melt options available</li>
+          <li>Can be bundled with snow removal</li>
+          <li>Pre-treatment available before storms</li>
+        </ul>
+        <button class="btn btn-primary btn-sm" onclick="showPage('contact')">Get a Salting Quote →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-full">
+    <div class="section-full-inner">
+      <div class="section-header section-header-center">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">Reliable Winter Service You Can Count On</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-icon">⚡</div><h3>Fast Response</h3><p>We monitor weather and aim to get to your property quickly after snowfall so you're not stuck waiting.</p></div>
+        <div class="why-card"><div class="why-icon">🤝</div><h3>Reliable &amp; Consistent</h3><p>Same owner, same quality every visit. No sending random crews — you know who's showing up.</p></div>
+        <div class="why-card"><div class="why-icon">❄️</div><h3>Full Winter Coverage</h3><p>Snow removal and salting available together or separately. Customize your service to fit your needs and budget.</p></div>
+        <div class="why-card"><div class="why-icon">💰</div><h3>Affordable Rates</h3><p>Fair, transparent pricing with free estimates. No surprise charges after the job is done.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <h2>Get Ready Before the First Snow</h2>
+      <p>Don't wait until the storm hits. Contact us now to set up your winter service plan and make sure you're covered all season.</p>
+      <div class="cta-band-actions">
+        <button class="btn btn-white" onclick="showPage('contact')">❄️ Get a Winter Services Quote</button>
+        <button class="btn btn-outline-white" onclick="showPage('services')">View All Services</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /winter -->
+
+
+<!-- ═══ FAQ PAGE ═══ -->
+<div id="page-faq" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / FAQ</div>
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about working with Morgan Lawn Services in Kokomo, Indiana.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header section-header-center">
+      <h2 class="section-title">Got Questions? We've Got Answers.</h2>
+    </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you provide free estimates?</div><div class="faq-a">Yes &mdash; always. We will come to your property, assess your lawn, and provide a detailed quote completely free of charge with no obligation. We believe in transparent pricing, so you'll know exactly what you're paying before any work begins.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How often should my lawn be mowed?</div><div class="faq-a">Most lawns benefit from mowing every 1&ndash;2 weeks during the growing season (typically April through October in Indiana). During peak growing periods in spring, weekly mowing keeps your lawn looking sharp. In late fall, bi-weekly or monthly may be sufficient.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What areas do you serve?</div><div class="faq-a">We primarily serve Kokomo and Howard County, Indiana. We also serve surrounding communities including Greentown, Russiaville, Bunker Hill, and nearby areas. Not sure if you're in our service area? Give us a call &mdash; we're happy to let you know!</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you provide free estimates?</div><div class="faq-a">Yes — always. We will come to your property, assess your lawn, and provide a detailed quote completely free of charge with no obligation. We believe in transparent pricing, so you'll know exactly what you're paying before any work begins.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How often should my lawn be mowed?</div><div class="faq-a">Most lawns benefit from mowing every 1–2 weeks during the growing season (typically April through October in Indiana). During peak growing periods in spring, weekly mowing keeps your lawn looking sharp. In late fall, bi-weekly or monthly may be sufficient. We'll recommend a schedule based on your specific lawn and grass type.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What areas do you serve?</div><div class="faq-a">We primarily serve Kokomo and Howard County, Indiana. We also serve surrounding communities including Greentown, Russiaville, Bunker Hill, and nearby areas. Not sure if you're in our service area? Give us a call or send us a message — we're happy to let you know!</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to be home when you come?</div><div class="faq-a">Nope! Most of our customers aren't home when we service their lawn, and that's completely fine. As long as we have access to your yard (gates unlocked, etc.), we can get the job done. We'll let you know when the job is complete.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?</div><div class="faq-a">We accept cash, check, Venmo, Cash App, and Zelle for your convenience. Payment is typically due upon completion of service. For recurring customers, we can work out a convenient billing schedule.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I request a quote?</div><div class="faq-a">Easy! You can fill out our contact form on the website, call or text us directly, or send us an email. We'll get back to you quickly &mdash; usually within a few hours during business hours &mdash; to set up your free estimate visit.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens if it rains on my scheduled day?</div><div class="faq-a">We monitor weather closely. If rain prevents us from mowing safely, we'll reach out to reschedule at the earliest opportunity &mdash; usually within 1&ndash;2 days. We'll always communicate promptly so you know what to expect.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Morgan Lawn Services insured?</div><div class="faq-a">We are committed to operating professionally and responsibly. Please contact us directly for current insurance information. We take the care and protection of your property very seriously.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I customize which services I want?</div><div class="faq-a">Absolutely! We offer individual services or bundled packages. Whether you just need mowing, just need mulch installed, or want a full-service plan &mdash; we can customize a service plan that fits your property and budget.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?</div><div class="faq-a">We accept cash, check, Venmo, Cash App, and Zelle for your convenience. Payment is typically due upon completion of service. For recurring customers, we can work out a convenient billing schedule. We'll confirm payment details before your first service.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I request a quote?</div><div class="faq-a">Easy! You can fill out our contact form on the website, call or text us directly, or send us an email. We'll get back to you quickly — usually within a few hours during business hours — to set up your free estimate visit.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens if it rains on my scheduled day?</div><div class="faq-a">We monitor weather closely. If rain prevents us from mowing safely (wet grass can lead to poor cuts and lawn damage), we'll reach out to reschedule at the earliest opportunity — usually within 1–2 days. We'll always communicate promptly so you know what to expect.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Morgan Lawn Services insured?</div><div class="faq-a">We are committed to operating professionally and responsibly. Please contact us directly for current insurance information and documentation. We take the care and protection of your property very seriously.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I customize which services I want?</div><div class="faq-a">Absolutely! We offer individual services or bundled packages. Whether you just need mowing, just need mulch installed, or want a full-service plan that includes mowing, trimming, edging, and seasonal cleanup — we can customize a service plan that fits your property and budget.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer any discounts for recurring customers?</div><div class="faq-a">We value loyal customers and offer competitive pricing for recurring service agreements. When you sign up for regular weekly or bi-weekly service, we can typically offer better rates than one-off visits. Ask about recurring customer pricing when you request your quote!</div></div>
     </div>
-    <div style="text-align:center; margin-top:48px; background:var(--green-pale); padding:40px; border-radius:var(--radius-lg); border:1px solid var(--green-light);"><h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--green-dark); margin-bottom:10px;">Still Have a Question?</h3><p style="font-size:0.9rem; color:var(--gray-mid); margin-bottom:24px;">We're always happy to chat! Reach out and we'll answer any question you have.</p><button class="btn btn-primary" onclick="showPage('contact')">Contact Us &rarr;</button></div>
+    <div style="text-align:center; margin-top:48px; background:var(--green-pale); padding:40px; border-radius:var(--radius-lg); border:1px solid var(--green-light);">
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--green-dark); margin-bottom:10px;">Still Have a Question?</h3>
+      <p style="font-size:0.9rem; color:var(--gray-mid); margin-bottom:24px;">We're always happy to chat! Reach out and we'll answer any question you have.</p>
+      <button class="btn btn-primary" onclick="showPage('contact')">Contact Us →</button>
+    </div>
   </div>
-</div>
+</div><!-- /faq -->
 
-<!-- CONTACT PAGE -->
+
+<!-- ═══ CONTACT PAGE ═══ -->
 <div id="page-contact" class="page">
-  <div class="page-header"><div class="page-header-inner"><div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Contact</div><h1>Get a Free Quote</h1><p>Ready to get started? Fill out the form below and we'll get back to you quickly &mdash; usually within a few hours.</p></div></div>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Contact</div>
+      <h1>Get a Free Quote</h1>
+      <p>Ready to get started? Fill out the form below and we'll get back to you quickly — usually within a few hours.</p>
+    </div>
+  </div>
+
   <div class="section">
     <div class="contact-grid">
       <div class="contact-info">
-        <div class="contact-info-card"><div class="contact-info-icon">&#128222;</div><div><h4>Phone / Text</h4><p><a href="tel:+17654310675">(765) 431-0675</a><br><span style="font-size:0.8rem;">Call or text anytime &mdash; we respond fast!</span></p></div></div>
-        <div class="contact-info-card"><div class="contact-info-icon">&#128231;</div><div><h4>Email</h4><p><a href="mailto:morganlawnservicesllc@gmail.com">morganlawnservicesllc@gmail.com</a><br><span style="font-size:0.8rem;">We'll reply within a few hours.</span></p></div></div>
-        <div class="contact-info-card"><div class="contact-info-icon">&#128205;</div><div><h4>Service Area</h4><p>Kokomo, Indiana &amp; surrounding Howard County communities. Free estimates available throughout our service area.</p></div></div>
-        <div class="contact-info-card"><div class="contact-info-icon">&#128241;</div><div><h4>Follow Us</h4><p>Stay up to date with our latest work and seasonal specials.</p><div class="social-links"><a class="social-link" href="#" title="Facebook">f</a><a class="social-link" href="#" title="Instagram">ig</a><a class="social-link" href="#" title="Google">G</a></div></div></div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon">📞</div>
+          <div>
+            <h4>Phone / Text</h4>
+            <p><a href="tel:+17654310675">(765) 431-0675</a><br>
+            <span style="font-size:0.8rem;">Call or text anytime — we respond fast!</span></p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:morganlawnservicesllc@gmail.com">morganlawnservicesllc@gmail.com</a><br>
+            <span style="font-size:0.8rem;">We'll reply within a few hours during business hours.</span></p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <h4>Service Area</h4>
+            <p>Kokomo, Indiana &amp; surrounding Howard County communities. Free estimates available throughout our service area.</p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-info-icon">📱</div>
+          <div>
+            <h4>Follow Us</h4>
+            <p>Stay up to date with our latest work and seasonal specials.</p>
+            <div class="social-links">
+              <a class="social-link" href="#" title="Facebook">f</a>
+              <a class="social-link" href="#" title="Instagram">ig</a>
+              <a class="social-link" href="#" title="Google">G</a>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div>
         <div style="background:var(--white); border-radius:var(--radius-lg); padding:40px; box-shadow:var(--shadow-md); border:1px solid var(--gray-border);">
           <h3 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:8px; color:var(--green-dark);">Request a Free Estimate</h3>
-          <p style="font-size:0.875rem; color:var(--gray-mid); margin-bottom:28px;">No pressure, no obligation &mdash; just a quick chat about your lawn and what you need.</p>
+          <p style="font-size:0.875rem; color:var(--gray-mid); margin-bottom:28px;">No pressure, no obligation — just a quick chat about your lawn and what you need.</p>
           <div class="form-grid">
-            <div class="form-group"><label for="cf-name">First Name *</label><input type="text" id="cf-name" placeholder="John" required></div>
-            <div class="form-group"><label for="cf-last">Last Name *</label><input type="text" id="cf-last" placeholder="Smith" required></div>
-            <div class="form-group"><label for="cf-phone">Phone Number *</label><input type="tel" id="cf-phone" placeholder="(765) 555-0100" required></div>
-            <div class="form-group"><label for="cf-email">Email Address</label><input type="email" id="cf-email" placeholder="john@email.com"></div>
-            <div class="form-group full"><label for="cf-address">Property Address *</label><input type="text" id="cf-address" placeholder="123 Main St, Kokomo, IN 46902" required></div>
+            <div class="form-group">
+              <label for="cf-name">First Name *</label>
+              <input type="text" id="cf-name" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-last">Last Name *</label>
+              <input type="text" id="cf-last" placeholder="Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-phone">Phone Number *</label>
+              <input type="tel" id="cf-phone" placeholder="(765) 555-0100" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" placeholder="john@email.com">
+            </div>
+            <div class="form-group full">
+              <label for="cf-address">Property Address *</label>
+              <input type="text" id="cf-address" placeholder="123 Main St, Kokomo, IN 46902" required>
+            </div>
             <div class="form-group full">
               <label>Services Needed <span style="font-weight:400; color:var(--gray-mid);">(select all that apply)</span></label>
-              <div id="cf-services" style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; padding:14px 16px; border:1.5px solid var(--gray-border); border-radius:10px; background:var(--white);">
+              <div id="cf-services" style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; padding:14px 16px; border:1.5px solid var(--gray-border); border-radius:10px; background:var(--white); transition:var(--transition);">
                 <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Lawn Mowing" style="width:auto; accent-color:var(--green-dark);"> Lawn Mowing</label>
                 <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Weed Eating / String Trimming" style="width:auto; accent-color:var(--green-dark);"> Weed Eating / Trimming</label>
                 <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Bush &amp; Hedge Trimming" style="width:auto; accent-color:var(--green-dark);"> Bush &amp; Hedge Trimming</label>
@@ -968,23 +1408,42 @@
                 <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Gutter Cleaning" style="width:auto; accent-color:var(--green-dark);"> Gutter Cleaning</label>
                 <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Snow Removal / Shoveling" style="width:auto; accent-color:var(--green-dark);"> Snow Removal / Shoveling</label>
                 <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Salting" style="width:auto; accent-color:var(--green-dark);"> Salting</label>
-                <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Not Sure &mdash; Need a Consultation" style="width:auto; accent-color:var(--green-dark);"> Not Sure &mdash; Need Consultation</label>
+                <label style="display:flex; align-items:center; gap:8px; font-weight:400; font-size:0.875rem; cursor:pointer;"><input type="checkbox" value="Not Sure — Need a Consultation" style="width:auto; accent-color:var(--green-dark);"> Not Sure — Need Consultation</label>
               </div>
             </div>
-            <div class="form-group full"><label for="cf-yard">Approximate Yard Size</label><select id="cf-yard"><option value="">Select yard size...</option><option>Small (under &frac14; acre)</option><option>Medium (&frac14; &ndash; &frac12; acre)</option><option>Large (over &frac12; acre)</option><option>Not sure</option></select></div>
-            <div class="form-group full"><label for="cf-message">Additional Details</label><textarea id="cf-message" placeholder="Tell us anything else helpful &mdash; gates, special areas, current condition, preferred schedule, etc."></textarea></div>
+            <div class="form-group full">
+              <label for="cf-yard">Approximate Yard Size</label>
+              <select id="cf-yard">
+                <option value="">Select yard size...</option>
+                <option>Small (under ¼ acre)</option>
+                <option>Medium (¼ – ½ acre)</option>
+                <option>Large (over ½ acre)</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="cf-message">Additional Details</label>
+              <textarea id="cf-message" placeholder="Tell us anything else helpful — gates, special areas, current condition, preferred schedule, etc."></textarea>
+            </div>
           </div>
-          <button class="btn btn-primary" id="form-submit-btn" style="width:100%; justify-content:center; margin-top:20px; padding:16px;" onclick="submitForm()">&#127807; Send My Quote Request</button>
-          <div class="form-success" id="form-success">&#9989; Thanks! We received your request and will be in touch very soon &mdash; usually within a few hours!</div>
-          <div id="form-error" style="display:none; background:#FFF3F3; border:1px solid #F44336; border-radius:10px; padding:16px 20px; color:#C62828; font-weight:500; text-align:center; margin-top:16px;">&#9888;&#65039; Something went wrong. Please call or text us at <strong>(765) 431-0675</strong>.</div>
+          <button class="btn btn-primary" id="form-submit-btn" style="width:100%; justify-content:center; margin-top:20px; padding:16px;" onclick="submitForm()">
+            🌿 Send My Quote Request
+          </button>
+          <div class="form-success" id="form-success">
+            ✅ Thanks! We received your request and will be in touch very soon — usually within a few hours!
+          </div>
+          <div id="form-error" style="display:none; background:#FFF3F3; border:1px solid #F44336; border-radius:10px; padding:16px 20px; color:#C62828; font-weight:500; text-align:center; margin-top:16px;">
+            ⚠️ Something went wrong sending your request. Please call or text us directly at <strong>(765) 431-0675</strong>.
+          </div>
           <p style="font-size:0.78rem; color:var(--gray-mid); text-align:center; margin-top:16px;">We respect your privacy. Your information is never shared or sold.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div><!-- /contact -->
 
-<!-- FOOTER -->
+
+<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
@@ -993,21 +1452,49 @@
           <img src="Morgan.svg" alt="Morgan Lawn Services Logo" width="64" height="64" style="border-radius:10px;">
           <div class="logo-text">
             <span class="logo-name" style="color:var(--white);">Morgan</span>
-            <span class="logo-tagline" style="color:rgba(255,255,255,0.5);">Lawn Services &middot; Kokomo, IN</span>
+            <span class="logo-tagline" style="color:rgba(255,255,255,0.5);">Lawn Services · Kokomo, IN</span>
           </div>
         </a>
         <p style="margin-top:16px;">Locally owned and operated lawn care in Kokomo, Indiana. Built on reliability, communication, and a genuine love for great-looking lawns.</p>
       </div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Lawn Mowing</a></li><li><a onclick="showPage('services')">Weed Eating &amp; Trimming</a></li><li><a onclick="showPage('services')">Bush &amp; Hedge Trimming</a></li><li><a onclick="showPage('services')">Mulch Removal &amp; Installation</a></li><li><a onclick="showPage('services')">Leaf Removal</a></li><li><a onclick="showPage('services')">Gutter Cleaning</a></li><li><a onclick="showPage('winter')">Snow Removal &amp; Salting</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('gallery')">Gallery</a></li><li><a onclick="showPage('faq')">FAQ</a></li><li><a onclick="showPage('pricing')">Pricing</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+17654310675">(765) 431-0675</a></li><li><a href="mailto:morganlawnservicesllc@gmail.com">morganlawnservicesllc@gmail.com</a></li><li><a onclick="showPage('contact')">Get a Free Quote</a></li><li><a>Kokomo, Indiana</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a onclick="showPage('services')">Lawn Mowing</a></li>
+          <li><a onclick="showPage('services')">Weed Eating &amp; Trimming</a></li>
+          <li><a onclick="showPage('services')">Bush &amp; Hedge Trimming</a></li>
+          <li><a onclick="showPage('services')">Mulch Removal &amp; Installation</a></li>
+          <li><a onclick="showPage('services')">Leaf Removal</a></li>
+          <li><a onclick="showPage('services')">Gutter Cleaning</a></li>
+          <li><a onclick="showPage('winter')">Snow Removal &amp; Salting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('gallery')">Gallery</a></li>
+          <li><a onclick="showPage('faq')">FAQ</a></li>
+          <li><a onclick="showPage('pricing')">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17654310675">(765) 431-0675</a></li>
+          <li><a href="mailto:morganlawnservicesllc@gmail.com">morganlawnservicesllc@gmail.com</a></li>
+          <li><a onclick="showPage('contact')">Get a Free Quote</a></li>
+          <li><a>Kokomo, Indiana</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <div>&copy; 2025 Morgan Lawn Services &middot; Kokomo, Indiana &middot; All rights reserved</div>
-      <div>Built for <span>Kokomo</span> &middot; <span>Reliable Service. Beautiful Lawns.</span></div>
+      <div>© 2025 Morgan Lawn Services · Kokomo, Indiana · All rights reserved</div>
+      <div>Built for <span>Kokomo</span> · <span>Reliable Service. Beautiful Lawns.</span></div>
     </div>
   </div>
 </footer>
+
 
 <script>
   function showPage(pageId) {
@@ -1024,10 +1511,11 @@
   }
 
   function toggleFaq(el) {
-    el.parentElement.classList.toggle('open');
+    const item = el.parentElement;
+    item.classList.toggle('open');
   }
 
-  var APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYzLrwoK-94Nc9nKmmKjP94TYKff-k2VLJQGkQ2EHImfcdIlGuxVwdqjwqLJP9W7jyNw/exec';
 
   function submitForm() {
     var firstName = document.getElementById('cf-name').value.trim();
@@ -1064,7 +1552,7 @@
       document.getElementById('form-error').style.display = 'block';
       document.getElementById('form-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
       btn.disabled = false;
-      btn.textContent = '&#127807; Send My Quote Request';
+      btn.textContent = '🌿 Send My Quote Request';
     });
   }
 
